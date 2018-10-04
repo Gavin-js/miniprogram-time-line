@@ -1,0 +1,137 @@
+/* hairline */
+
+.hairline-right, .hairline-bottom, .hairline-left, .hairline-top {
+  position: relative;
+}
+
+.hairline-right::after, .hairline-bottom::before, .hairline-left::before,
+.hairline-top::after {
+  content: " ";
+  position: absolute;
+  background-color: #e6e6e6;
+  display: block;
+  z-index: 5;
+}
+
+.hairline-right::after {
+  right: 0;
+  left: auto;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: scaleX(0.3333);
+  transform-origin: 100% 0;
+}
+
+.hairline-bottom::before {
+  right: 0;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  height: 1px;
+  transform: scaleY(0.3333);
+  transform-origin: 0 100%;
+}
+
+.hairline-left::before {
+  right: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: scaleX(0.3333);
+  transform-origin: 0 0;
+}
+
+.hairline-top::after {
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: auto;
+  height: 1px;
+  transform: scaleY(0.3333);
+  transform-origin: 0 0;
+}
+
+.hairline-border {
+  position: relative;
+}
+
+.hairline-border::after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #e6e6e6;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+}
+.dynamic{
+  background: #fff;
+  padding: 0 30rpx;
+}
+.dynamic-item{
+  display: flex;
+}
+.dynamic-item:first-child .dynamic-memo::before{
+  display: none;
+}
+.dynamic-item:last-child .dynamic-memo::after{
+  display: none;
+}
+.dynamic-avatar{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 100%;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+  position: relative;
+  z-index: 1;
+}
+.dynamic-memo{
+  flex: 1;
+  position: relative;
+  /* border-bottom: 1rpx solid #d8d8d8; */
+}
+.dynamic-title{
+  font-size: 26rpx;
+}
+.dynamic-desc{
+  font-size: 23rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+.dynamic-info{
+  padding: 30rpx 0;
+}
+.dynamic-memo::before{
+  content: " ";
+  display: block;
+  width: 1rpx;
+  height: 30rpx;
+  background: #d8d8d8;
+  position: absolute;
+  left: -45rpx;
+  top: 0;
+  transform: scaleX(0.5);
+}
+.dynamic-memo::after{
+  content: " ";
+  display: block;
+  width: 1rpx;
+  height: 100%;
+  background: #d8d8d8;
+  position: absolute;
+  left: -45rpx;
+  top: 30rpx;
+  bottom: 0;
+  transform: scaleX(0.5);
+}
+.dynamic-time{
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
